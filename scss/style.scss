@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./reset";
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    color: var(--black);
+}
+:root{
+    --pink: #F54749;
+    --white: #FFFFFF;
+    --black: #241415;
+
+
+}
+%center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%center-element-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+%center-element-df {
+    display: flex;
+    align-items: center;
+}
+
+@mixin text__style($fs, $fw, $lh){
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+.nav{
+    @extend %center-element-space;
+    margin: 17px 0;
+    ul{
+        @extend %center-element-space;
+        gap: 30px;
+        li{
+            a{
+                @include text__style(16px, 400, 20.16px );
+                color: var(--black)
+            }
+        }
+    }
+    &__icon{
+        @extend %center-element-space;
+        gap: 30px;
+        
+        button{
+        @extend %center-element;
+        gap: 10px; 
+        }
+    }
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 82px;
+}
+.wrapper__text{
+    &__deliver{
+        padding: 7px 20px;
+        border-radius: 50px;
+        background-color: #f5474a2d;
+        @extend %center-element-space;
+        @include text__style(18px, 400, 30px);
+        width: 150px;
+        color: var(--pink);
+    }
+    h1{
+        @include text__style(80px, 700, 100.8px);
+        color: var(--black);
+        padding: 10px 0px 25px 0px;
+        span{
+            color: var(--pink);
+        }
+    }
+    h3{
+        @include text__style(20px, 400, 30px);
+    }
+    &__btn{
+        @extend %center-element-df;
+        gap: 30px;
+        padding: 50px 0px;
+        &__play{
+            @extend %center-element-df;
+            gap: 15px;
+            span{
+              @include text__style(16px, 400, 30px);
+
+            }
+        }
+    }
+}
+.btn{
+    @include text__style(16px, 400, 20.16px);
+    padding: 13px 20px;
+    background-color: var(--pink);
+    color: var(--white);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #96292b;
+    }
+}
+.play__btn{
+    width: 60px;
+    height: 60px;
+    opacity: 0.05px;
+    background-color: #f5474a1a;
+    border-radius: 50%;
+    @extend %center-element;
+    &__in{
+        width: 50px;
+        height: 50px;
+        opacity: 0.1px;
+        background-color: #f5474a3a;
+        border-radius: 50%;
+        @extend %center-element;
+
+    }
+
+
+}
+
+.banner{
+    position: relative;
+    padding-top: 100px;
+    &__border{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border: 1px solid #FFFFFFB2;
+        box-shadow: 0px 4px 20px 0px #00000008;
+        width: 270px;
+        height: 87px;
+        padding: 10px 8px;
+        border-radius: 9px;
+        &__burger{
+            position: absolute;
+            
+            @extend %center-element;
+            width: 269px;
+            height: 89px;
+            box-shadow: 0px 4px 20px 0px #00000008;
+            background-color: #FFFFFFB2;
+            border-radius: 9px;
+        }
+    }
+}
+.ava-happy{
+    @extend %center-element-df;
+    gap: 20px;
+}
+.text-happy{
+    @include text__style(20px,700, 30px );
+}
+.review{
+    @extend %center-element-df;
+    &__1{
+        @include text__style(16px,700, 30px );
+        padding: 0px 5px 0px 10px;
+    }
+}
+.menu{
+    margin-top: 150px;
+
+    h2{
+        @include text__style(40px,700, 50.4px );
+        text-align: center;
+
+    }
+    h3{
+        @include text__style(20px, 400, 30px);
+        text-align: center;
+        padding: 16px 0px 50px 0px;
+    }
+}
+.burger-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    &__wrapper{
+        box-shadow: 5px 5px 20px 0px #24141514;
+        border: 1px solid #9F9E9A33;
+        border-radius: 20px;
+
+    }
+}
+.burger-text{
+    padding: 16px;
+    
+}
+.burger-first-line{
+    @extend %center-element-df;
+}
+.burger-name{
+    font-family: "Poppins", sans-serif;
+    @include text__style(18px, 700, 27px);
+    padding-right: 32px;
+}
+.burger-rate{
+    font-family: "Poppins", sans-serif;
+    @include text__style(14px, 700, 21px);
+    padding-left: 5px;
+}
+.burger-deliver{
+    @extend %center-element-df;
+    padding: 10px 0px 16px 0px;
+    gap: 12px;
+    &__1{
+        @extend %center-element-df;
+        gap: 4px;
+        strong{
+            font-family: "Poppins", sans-serif;
+            @include text__style(14px, 400, 21px);
+        }
+
+    }
+}
+.burger-btn{
+    width: 100%;
+}
+.download{
+    @extend %center-element-space;
+    gap: 197px;
+    margin: 100px 0;
+    h2{
+        @include text__style(40px,700, 50.4px );
+        text-align: center;
+
+    }
+    h3{
+        @include text__style(20px, 400, 30px);
+        text-align: center;
+        padding: 16px 0px 50px 0px;
+    }
+}
+.comment-section{
+    background-color: #f5474a18;
+}
+.comment-title{
+    @extend %center-element-space;
+    padding-top: 50px;
+    h2{
+        @include text__style(40px,700, 50.4px );
+    }
+}
+.vectors{
+    display: flex;
+    gap: 20px;
+}
+.right-vector{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0.1px;
+    background-color: #f5474a22;
+    @extend %center-element;
+}
+.left{
+    background-color: #F54749;
+}
+.customer-wrapper{
+    display: flex;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+.customer{
+    width: 360px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 20px;
+    margin-top: 50px;
+}
+.comment-text{
+    @include text__style(16px, 400, 28px);
+    padding: 26px 0px 30px 0px;
+}
+.customer-details{
+    @extend %center-element-df;
+    gap: 10px;
+}
+.name{
+    @include text__style(16px, 700, 28px);
+}
+.job{
+    @include text__style(14px, 400, 22px);
+}
+.footer{
+    @extend %center-element-space;
+
+    margin-top: 105px;
+    padding-bottom: 24px;
+    ul{
+        @extend %center-element-space;
+        gap: 60px;
+      li{
+            a{
+                @include text__style(16px, 400, 20.16px );
+                color: var(--black);
+            }
+        }
+    }
+}
+.footer-icon{
+    @extend %center-element;
+    gap: 35px;
+}
+.footer-end{
+    @extend %center-element-space;
+
+    border-top: 1px solid #2414151A;
+    padding: 30px 0px 30px 0px;
+}
+.policy{
+    @extend %center-element-df;
+    gap: 15px;
+}
