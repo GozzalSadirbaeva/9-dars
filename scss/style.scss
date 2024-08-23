@@ -54,6 +54,9 @@ body {
         @extend %center-element-space;
         gap: 30px;
         li{
+            display: flex;
+            align-items: center;
+            gap: 5px;
             a{
                 @include text__style(16px, 400, 20.16px );
                 color: var(--black)
@@ -75,6 +78,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 82px;
+    gap: 26px;
 }
 .wrapper__text{
     &__deliver{
@@ -170,8 +174,20 @@ body {
     }
 }
 .ava-happy{
-    @extend %center-element-df;
-    gap: 20px;
+    @extend %center-element-space;
+}
+.ava-img{
+    position: relative;
+}
+.img{
+    position: absolute;
+    left: 50px
+}
+.img2{
+    left: 100px;
+}
+.img3{
+    left: 150px;
 }
 .text-happy{
     @include text__style(20px,700, 30px );
@@ -245,7 +261,7 @@ body {
 .download{
     @extend %center-element-space;
     gap: 197px;
-    margin: 100px 0;
+    margin: 100px auto;
     h2{
         @include text__style(40px,700, 50.4px );
         text-align: center;
@@ -293,6 +309,8 @@ body {
     background-color: var(--white);
     border-radius: 20px;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 .comment-text{
     @include text__style(16px, 400, 28px);
@@ -301,6 +319,7 @@ body {
 .customer-details{
     @extend %center-element-df;
     gap: 10px;
+    flex: 1;
 }
 .name{
     @include text__style(16px, 700, 28px);
